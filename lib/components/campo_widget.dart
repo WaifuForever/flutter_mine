@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import '../models/campo.dart';
 
-
-
 class CampoWidget extends StatelessWidget {
 
   final Campo campo;
   final void Function(Campo) onAbrir;
   final void Function(Campo) onAlternarMarcacao;
+
   
   CampoWidget({
     @required this.campo,
@@ -31,15 +30,12 @@ class CampoWidget extends StatelessWidget {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
    return InkWell(
      onTap: () => onAbrir(campo),
      onLongPress: () => onAlternarMarcacao(campo),
      child: _getImage(),
-     
    );
   }
-
 }
